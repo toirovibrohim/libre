@@ -1,0 +1,447 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libre</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ca93534f5f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-------------- Navbar -------------->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#" class="logo-link">
+                <i class="fas fa-moon moon-icon"></i>
+                <p class="logo-text">libre</p>
+            </a>
+        </div>
+        <div class="input-area">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search">
+        </div>
+        <div class="code-drops">
+            <a href="#">Codrops</a>
+        </div>
+    </nav>
+
+    <section class="main">
+    
+        <!-------------- Side Navbar -------------->
+        <ul class="side-nav">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-home side-nav-icon"></i>
+                    <p class="nav-text">Home</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a style="cursor: pointer;" class="nav-link" onclick="onToggle()">
+                    <i class="fas fa-tags side-nav-icon"></i>
+                    <p class="nav-text active">Categories</p>
+                </a>
+                <ul class="categories open" id="categories-id">
+                    <li class="category-item">
+                        <a style="cursor: pointer;" class="category-link" onclick="onChangeActive(0)">
+                            <p class="category-text">Fictions</p>
+                            <span class="notifications">7</span>
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#" class="category-link" onclick="onChangeActive(1)">
+                            <p class="category-text">Nonfiction</p>
+                            <span class="notifications">7</span>
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#" class="category-link" onclick="onChangeActive(2)">
+                            <p class="category-text">Lifestyle</p>
+                            <span class="notifications">7</span>
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#" class="category-link" onclick="onChangeActive(3)">
+                            <p class="category-text">Health & Fitness</p>
+                            <span class="notifications">7</span>
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#" class="category-link" onclick="onChangeActive(4)">
+                            <p class="category-text notify">Art & Design</p>
+                            <span class="notifications add-badge" >7</span>
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#" class="category-link" onclick="onChangeActive(5)">
+                            <p class="category-text">Music</p>
+                            <span class="notifications">7</span>
+                        </a>
+                    </li>
+                </ul>
+                
+            </li>
+            
+            <li class="nav-item"  id="nav-item-id">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-user side-nav-icon"></i>
+                    <p class="nav-text">Wishlist</p>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Section Content -->
+        <div class="section-content">
+            <div class="section-title">
+                <div class="section-header-box">
+                    <h3 class="section-header">Art & Design</h3>
+                    <p class="section-sub-header">Interesting stats</p>
+                </div>
+                <button class="section-header-button">Add New Book</button>
+            </div>
+
+            <div class="section-stats">
+                <p class="stats-header">Your favourite authors in this category</p>
+                <div class="favorite-stats-table">
+                    <table class="stats-table">
+                        <tr class="st-table-header">
+                            <td class="table-header">Name</td>
+                            <td class="table-header text-center">Owned/Wishlist</td>
+                            <td class="table-header text-center">Nationality</td>
+                        </tr>
+                        <tr class="st-table-data">
+                            <td class="table-data">Yohji Yamamoto</td>
+                            <td class="table-data bold text-center">5/4</td>
+                            <td class="table-data bold text-center">Japan</td>
+                        </tr>
+                        <tr class="st-table-data">
+                            <td class="table-data">Sato Oki</td>
+                            <td class="table-data bold text-center">1/3</td>
+                            <td class="table-data bold text-center">Japan</td>
+                        </tr>
+                        <tr class="st-table-data">
+                            <td class="table-data">Amaya Arzuaga</td>
+                            <td class="table-data bold text-center">1/1</td>
+                            <td class="table-data bold text-center">Spain</td>
+                        </tr>
+                    </table>
+                    <div class="read-stats">
+                        <div class="read-stats-top">
+                            <div class="most-read">
+                                <p class="read-stats-header">Most read format</p>
+                                <p class="read-stats-text bold">Print</p>
+                            </div>
+                            <div class="total-read">
+                                <p class="read-stats-header">Total Read/Owned</p>
+                                <p class="read-stats-text bold">4/7</p>
+                            </div>
+                        </div>
+                        <div class="read-stats-bottom">
+                            <div class="most-reread">
+                                <p class="read-stats-header">Most re-read book</p>
+                                <p class="read-stats-text bold">Just My Type: A Book About Fonts</p>
+                                <p class="read-stats-text">by Simon Garfield</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-books">
+                <div class="section-books-title">
+                    <div class="books-title">
+                        <h3>Books</h3>
+                    </div>
+                    <div class="books-tabs">
+                        <a onclick="onLibraryChange()" class="book-title-tab active-tab" id="library-tab">
+                            <p class="tab-text">Library</p>
+                            <p class="tab-num">(35)</p>
+                        </a>
+                        <a onclick="onPicksChange()" class="book-title-tab" id="picks-tab">
+                            <p class="tab-text">Picks For You</p>
+                            <p class="tab-num">(4)</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="books-table" id="library">
+                    <div class="book-library"> 
+                        <div class="lib-book-img-wrapper">
+                            <a href="">
+                                <img src="img/featured-book-1.PNG" alt="" class="lib-book-img">
+                            </a> 
+                            
+                            <div class="popover-info">
+                                <p class="popover-title">Apertamento</p>
+                                <p class="popover-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, sunt.</p>
+                                <div class="popover-status-box" id="lib-book-status">
+                                    <span class="loaned-color round" id="status-round"></span>
+                                    <select class="popover-status">
+                                        <option value="started">Started</option>
+                                        <option value="finished">Finished</option>
+                                        <option value="cur-read"> Current Reading</option>
+                                        <option selected value="loaned">Loaned</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>  
+                        <p class="book-name">Apartamento</p>
+                        <p class="book-published">Aug 2018</p>
+                        <span class="book-status loaned-color">Loaned</span>
+                    </div>
+                    
+
+                    <div class="book-library">
+                        <div class="lib-book-img-wrapper">
+                            <a href="">
+                                <img src="img/featured-book-2.PNG" alt="" class="lib-book-img">
+                            </a>
+
+                            <div class="popover-info">
+                                <p class="popover-title">Apertamento</p>
+                                <p class="popover-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, sunt.</p>
+                                <div class="popover-status-box" id="lib-book-status">
+                                    <span class="loaned-color round" id="status-round"></span>
+                                    <select class="popover-status">
+                                        <option value="started">Started</option>
+                                        <option value="finished">Finished</option>
+                                        <option value="cur-read"> Current Reading</option>
+                                        <option selected value="loaned">Loaned</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="book-name">Popaye</p>
+                        <p class="book-published">Sep 2018</p>
+                        <span class="book-status started-color">Started</span>
+                        
+                        <div class="popover-info">
+                            <p class="popover-title">Popaye</p>
+                            <p class="popover-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, sunt.</p>
+                            <div class="popover-status-box" id="lib-book-status">
+                                <span class="started-color round" id="status-round"></span>
+                                <select class="popover-status">
+                                    <option selected value="started">Started</option>
+                                    <option value="finished">Finished</option>
+                                    <option value="cur-read"> Current Reading</option>
+                                    <option value="loaned">Loaned</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="book-library">
+                        <div class="lib-book-img-wrapper">
+                            <a href="">
+                                <img src="img/featured-book-3.PNG" alt="" class="lib-book-img">
+                            </a>
+
+                            <div class="popover-info">
+                                <p class="popover-title">Premium 2</p>
+                                <p class="popover-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, sunt.</p>
+                                <div class="popover-status-box" id="lib-book-status">
+                                    <span class="finished-color round" id="status-round"></span>
+                                    <select class="popover-status">
+                                        <option value="started">Started</option>
+                                        <option selected value="finished">Finished</option>
+                                        <option value="cur-read"> Current Reading</option>
+                                        <option value="loaned">Loaned</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="book-name">Premium 2</p>
+                        <p class="book-published">Dec 2018</p>
+                        <span class="book-status finished-color">Finished</span>
+
+                       
+                    </div>
+                    <div class="book-library">
+                        <div class="lib-book-img-wrapper">
+                            <a href="">
+                                <img src="img/featured-book-4.PNG" alt="" class="lib-book-img">
+                            </a>
+                            
+                            <div class="popover-info">
+                                <p class="popover-title">Premium 4</p>
+                                <p class="popover-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, sunt.</p>
+                                <div class="popover-status-box" id="lib-book-status">
+                                    <span class="finished-color round" id="status-round"></span>
+                                    <select class="popover-status">
+                                        <option value="started">Started</option>
+                                        <option selected value="finished">Finished</option>
+                                        <option value="cur-read"> Current Reading</option>
+                                        <option value="loaned">Loaned</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="book-name">Premium 4</p>
+                        <p class="book-published">Dec 2018</p>
+                        <span class="book-status finished-color">Finished</span>
+                        
+                    </div>
+                    <div class="book-library">
+                        <div class="lib-book-img-wrapper">
+                            <a href="">
+                                <img src="img/featured-book-5.PNG" alt="" class="lib-book-img">
+                            </a>
+
+                            <div class="popover-info">
+                                <p class="popover-title">Brutus</p>
+                                <p class="popover-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, sunt.</p>
+                                <div class="popover-status-box" id="lib-book-status">
+                                    <span class="loaned-color round" id="status-round"></span>
+                                    <select class="popover-status">
+                                        <option value="started">Started</option>
+                                        <option value="finished">Finished</option>
+                                        <option value="cur-read"> Current Reading</option>
+                                        <option selected value="loaned">Loaned</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <p class="book-name">Brutus</p>
+                        <p class="book-published">Jan 2019</p>
+                        <span class="book-status loaned-color">Loaned</span>
+                    </div>
+                    <div class="book-library">
+                        <div class="lib-book-img-wrapper">
+                            <a href="">
+                                <img src="img/featured-book-6.PNG" alt="" class="lib-book-img">
+                            </a>
+                            
+                            <div class="popover-info">
+                                <p class="popover-title">For Men</p>
+                                <p class="popover-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, sunt.</p>
+                                <div class="popover-status-box" id="lib-book-status">
+                                    <span class="cur-read-color round" id="status-round"></span>
+                                    <select class="popover-status">
+                                        <option value="started">Started</option>
+                                        <option value="finished">Finished</option>
+                                        <option selected value="cur-read"> Current Reading</option>
+                                        <option  value="loaned">Loaned</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="book-name">For Men</p>
+                        <p class="book-published">March 2019</p>
+                        <span class="book-status cur-read-color">Currently reading</span>
+
+                    </div>
+                    <div class="book-library">
+                        <div class="lib-book-img-wrapper">
+                            <a href="">
+                                <img src="img/featured-book-7.PNG" alt="" class="lib-book-img">
+                            </a>
+                            
+                            <div class="popover-info">
+                                <p class="popover-title">Good Body</p>
+                                <p class="popover-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, sunt.</p>
+                                <div class="popover-status-box" id="lib-book-status">
+                                    <span class="started-color round" id="status-round"></span>
+                                    <select class="popover-status">
+                                        <option selected value="started">Started</option>
+                                        <option value="finished">Finished</option>
+                                        <option value="cur-read"> Current Reading</option>
+                                        <option value="loaned">Loaned</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="book-name">Good Body</p>
+                        <p class="book-published">Aug 2019</p>
+                        <span class="book-status started-color">Started</span>
+
+                        
+                    </div>
+                </div>
+
+                <div class="books-table" id="picks">
+                    <div class="book-picks">
+                        <img src="img/featured-book-1.PNG" alt="" class="picks-book-img">
+                        <div class="book-picks-info">
+                            <p class="book-picks-name">Apartamento Jul 2018</p>
+                            <p class="book-picks-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae temporibus.</p>
+                            <button class="book-picks-add">Add to Wishlist</button>
+                        </div>
+                    </div>
+                    <div class="book-picks">
+                        <img src="img/featured-book-2.PNG" alt="" class="picks-book-img">
+                        <div class="book-picks-info">
+                            <p class="book-picks-name">Popaye Jul 2019</p>
+                            <p class="book-picks-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae temporibus.</p>
+                            <button class="book-picks-add">Add to Wishlist</button>
+                        </div>
+                    </div>
+                    <div class="book-picks">
+                        <img src="img/featured-book-3.PNG" alt="" class="picks-book-img">
+                        <div class="book-picks-info">
+                            <p class="book-picks-name">Premium 2 Jul 2019</p>
+                            <p class="book-picks-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae temporibus.</p>
+                            <button class="book-picks-add">Add to Wishlist</button>
+                        </div>
+                    </div>
+                    <div class="book-picks">
+                        <img src="img/featured-book-4.PNG" alt="" class="picks-book-img">
+                        <div class="book-picks-info">
+                            <p class="book-picks-name">Premium 4 Jul 2019</p>
+                            <p class="book-picks-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae temporibus.</p>
+                            <button class="book-picks-add">Add to Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User stats -->
+        <div class="user-stats">
+            <div class="user">
+                <span class="user-pic">
+                    <i class="fas fa-moon fa-2x user-pic-1"></i>
+                    <span class="user-pic-2"></span>
+                </span>
+                <div class="user-info">
+                    <p class="user-name">Amie Chan</p>
+                    <span class="user-joined">Joined since 2017</span>
+                </div>
+            </div>
+
+            <div class="user-stat">
+                <p class="user-read">You’ve read <b>4 of 30 books</b> in 2018</p>
+                <div class="read-books">
+                    <a href="#" class="read-book-link">
+                        <img src="img/user-info-part/read-book-1.PNG" class="read-book">
+                    </a>
+                    <a href="#" class="read-book-link">
+                        <img src="img/user-info-part/read-book-2.PNG" class="read-book">
+                    </a>
+                    <a href="#" class="read-book-link">
+                        <img src="img/user-info-part/read-book-3.PNG" class="read-book">
+                    </a>
+                    <a href="#" class="read-book-link">
+                        <img src="img/user-info-part/read-book-4.PNG" class="read-book">
+                    </a>
+                </div>
+            </div>
+
+            <div class="user-current">
+                <p class="current-read">Currently reading</p>
+                <div class="current-book">
+                    <a href="#">
+                        <img src="img/user-info-part/cur-reading-book.PNG" class="cur-reading-book">
+                    </a>
+                    <div class="cur-book-info">
+                        <p class="cur-book-name">Popular Lies* About Graphic
+                            Design</p>
+                        <span class="cur-book-page">15/250 pages</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
